@@ -19,18 +19,17 @@ const app = express();
 app.use(limiter);
 
 
-const cors = require('cors');
-const allowedOrigins = [
-  'http://localhost:5173',
-  'https://68b8a1ce72634155d0055aeb--taskmanager-ayushbansal.netlify.app',  // 👈 add your Netlify frontend here
-];
-
 app.use(cors({
-  origin: allowedOrigins,
+  origin: "*",   // or specify your Netlify URL
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+app.options('*', cors()); 
+
+const allowedOrigins = [
+  'http://localhost:5173',     // 👈 add this
+  'https://taskmanager-ayushbansal.netlify.app'
+];
 
 app.use((req, res, next) => {
   const origin = req.headers.origin;
