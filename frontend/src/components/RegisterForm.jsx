@@ -36,9 +36,12 @@ function RegisterForm() {
             return setError("Please Enter password greater than 8 characters");
         }
         console.log("request hit start");
-        const response = await axios.post(`${API_URL}/auth/register`,input,{
-            headers:{'Content-Type':'application/json'}
-        });
+  const response = await axios.post(
+  `${API_URL}/auth/register`,
+  JSON.stringify(input),
+  { headers: { "Content-Type": "application/json" } }
+);
+
         console.log("request hit end");
 
         if(response.data.token){

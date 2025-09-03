@@ -27,9 +27,14 @@ function Login() {
     if(!isStrongPassword(input.password)){
       return setError("Enter correct password");
     }
-    const response = await axios.post(`${API_URL}/auth/login`,input,{
-      headers:{'Content-Type':'application/json'}
-    });
+ const response = await axios.post(
+  `${API_URL}/auth/login`,
+  JSON.stringify(input),
+  {
+    headers: { "Content-Type": "application/json" }
+  }
+);
+
     if(response.data.token){
       localStorage.setItem('token',response.data.token);
       console.log("Login Succesful", response.data);
