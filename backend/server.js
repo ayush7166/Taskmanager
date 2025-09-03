@@ -22,7 +22,7 @@ app.use(limiter);
 const cors = require('cors');
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://taskmanager-ayushbansal.netlify.app',  // 👈 add your Netlify frontend here
+  'https://68b8a1ce72634155d0055aeb--taskmanager-ayushbansal.netlify.app',  // 👈 add your Netlify frontend here
 ];
 
 app.use(cors({
