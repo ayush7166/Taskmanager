@@ -21,14 +21,10 @@ app.use(limiter);
 
 app.use(cors({
     origin: [
-        'http://localhost:5173',     // 👈 add this
-        'https://task-manager-kappa-topaz.vercel.app', 
-        'https://task-manager-two-woad.vercel.app',
-        'https://task-manager-2jrz025z4-abhisheks-projects-1c338bd8.vercel.app',
-        'https://task-manager-git-main-abhisheks-projects-1c338bd8.vercel.app',
-        'https://task-manager-mv93divea-abhisheks-projects-1c338bd8.vercel.app'
+        "http://localhost:5173",                        // local dev
+        "https://taskmanager-ayushbansal.netlify.app"   // your Netlify frontend
     ],
-    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    methods: ["GET", "POST", "PATCH", "DELETE"],
     credentials: true
 }));
 
